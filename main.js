@@ -17,7 +17,7 @@ const createWindow = () => {
     resizable: false,
     movable: false,
     minimizable: false,
-    alwaysOnTop: true,
+    alwaysOnTop: false,
     kiosk: true,
     webPreferences: {
       nodeIntegration: true,
@@ -52,6 +52,11 @@ const createWindow = () => {
 ipcMain.on("close", () => {
   app.quit();
 });
+// ipcMain.on('image', (event, data)=>{
+// 	fs.writeFile('image.png', data.photoData, 'base64', () => {
+// 		console.log('saved')
+// 	})
+// })
 
 // ===========App Events===========
 app.on("ready", createWindow);

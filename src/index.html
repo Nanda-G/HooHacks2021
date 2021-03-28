@@ -9,7 +9,20 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
+    <script>
+      if (typeof module === "object") {
+        window.module = module;
+        module = undefined;
+      }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      if (window.module) module = window.module;
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- <script src="https://docs.opencv.org/3.4.0/opencv.js"></script> -->
   </head>
   <body>
     <div id="heading">
@@ -23,8 +36,13 @@
     <video id="video"></video>
     <canvas id="canvasOutput"></canvas>
 
+    <div id="test"></div>
+    <button id="submit">submit</button>
+
     <script>
       require("./js/index.js");
+      require("./js/camera.js");
+      // require('./js/desktopCapture.js');
     </script>
   </body>
 </html>
