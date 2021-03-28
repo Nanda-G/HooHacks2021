@@ -8,16 +8,6 @@
 	display: inline;
 	text-align: center;
 }
-#close{
-	float: right;
-	background-color: red;
-	outline: none;
-	border: 0;
-	font-size: 20px;
-	width: 30px;
-	height: 25px;
-}
-
 .instructions h2{
 	text-align: center
 	font-size: 25px;
@@ -26,7 +16,7 @@
 	font-size: 20px;
 	margin-top: 10px;
 }
-#start-test, button#home{
+#close, #start-test, button#home{
 	margin-left: 40%;
 	margin-right: 40%;
 	width: 20%;
@@ -35,7 +25,7 @@
 	margin-bottom: 2vh;
 }
 
-#canvasOutput, video{
+#canvasOutput {
 	display: none;
 }
 
@@ -43,3 +33,10 @@
 	border-radius:0;
 }
 
+video {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 20vw;
+	height: 20vh;
+}

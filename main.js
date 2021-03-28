@@ -17,7 +17,7 @@ const createWindow = () => {
     resizable: false,
     movable: false,
     minimizable: false,
-    alwaysOnTop: false,
+    alwaysOnTop: true,
     kiosk: true,
     webPreferences: {
       nodeIntegration: true,
@@ -30,16 +30,16 @@ const createWindow = () => {
   win.webContents.on("before-input-event", (event, input) => {
     if (input.control && input.key.toLowerCase() === "v") {
       event.preventDefault();
-      console.log("Copy Paste | WebWiz 101");
+      ipcMain.send("copy");
     }
     if (input.control && input.key.toLowerCase() === "c") {
       event.preventDefault();
-      console.log("Copy Paste | WebWiz 101");
+      ipcMain.send("copy");
     }
   });
 
-  // Menu.setApplicationMenu(menu)
-  win.toggleDevTools();
+  Menu.setApplicationMenu(menu);
+  // win.toggleDevTools();
   win.on("ready-to-show", () => {
     win.show();
   });

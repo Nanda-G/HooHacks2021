@@ -1,6 +1,4 @@
 $(document).ready(() => {
-  const { dialog } = require("electron").remote;
-  const fs = require("fs");
   //const io = require("socket.io-client");
   let video = document.querySelector("video");
   video.width = 800;
@@ -51,9 +49,9 @@ $(document).ready(() => {
 
   socket.on("model_response", (string) => {
     if (string === "Please adjust the camera angle") {
-      dialog.showErrorBox("WARNING", string);
+      alert(string);
     } else if (string === "Please show your notebook for 5 seconds") {
-      dialog.showMessageBox({ message: string, type: "info", title: "ALERT" });
+      alert(string);
     }
   });
 });

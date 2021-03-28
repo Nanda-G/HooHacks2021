@@ -6,9 +6,10 @@ import base64
 import cv2
 import numpy as np
 from flask_socketio import SocketIO
-from time import *
+import time
 from cv import *
 
+start = time.time()
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 socketio = SocketIO(app, cors_allowed_origins='*')
@@ -48,14 +49,17 @@ def img():
 
 @socketio.on("image_send")
 def socketio_test(photoData):
-    img_data = base64.b64decode(photoData)
-    nparr = np.fromstring(img_data, np.uint8)
-    img_np = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-    cv2.imshow("dhd",img_np)
-    cv2.waitKey(1)
-    string1 = face_detection(img_np)
-    print(string1)
-    socketio.emit('model_response', string1)
+	cond1 = False
+	curr = time.time()
+	global start
+	if (curr-start >= 15 and curr-start <= 25):
+		cond1=True
+	img_data = base64.b64decode(photoData)
+	nparr = np.fromstring(img_data, np.uint8)
+	img_np = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+	string1 = face_detection(img_np, cond1)
+	print(string1)
+	socketio.emit('model_response', string1)
 
 if __name__ == "__main__":
 	socketio.run(app, port=8000, debug=True)
