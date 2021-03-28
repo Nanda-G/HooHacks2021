@@ -3,5 +3,4 @@ Flask-SocketIO
 Flask-CORS
 Flask-Bcrypt
 opencv-python
-base64
 numpy
