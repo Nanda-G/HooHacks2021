@@ -1,30 +1,36 @@
-const test = require("./test.js");
+var test = require("./test.js");
 
-console.log(localStorage.getItem("subject"));
-
+sub = localStorage.getItem("subject")
+let ques
+for (let i=0; i<test.length; i++){
+  if(test[i].subject===sub){
+    ques = test[i].test
+    break;
+  }
+}
 // ============Rendering Test Data==============
-for (let i = 0; i < test.length; i++) {
+for (let i = 0; i < ques.length; i++) {
   $("#test").append(
     `<div class="panel-heading question">
-            Q.${i + 1} ${test[i].q}
+            Q.${i + 1} ${ques[i].q}
         </div>
         <div class="panel-body" id="q${i}"></div>`
   );
-  if (test[i].type === "mcq") {
-    for (let j = 0; j < test[i].o.length; j++) {
+  if (ques[i].type === "mcq") {
+    for (let j = 0; j < ques[i].o.length; j++) {
       $("#q" + i.toString()).append(
         `<div class="radio">
                 	<label>
-            			<input type="radio" name="${test[i].id}" value="${test[i].o[j]}">${test[i].o[j]}
+            			<input type="radio" name="${ques[i].id}" value="${ques[i].o[j]}">${ques[i].o[j]}
                 	</label>
           		</div>`
       );
     }
-  } else if (test[i].type === "sub") {
+  } else if (ques[i].type === "sub") {
     $("#q" + i.toString()).append(
       `<div>
                 <label>
-                    <input type="text" name="${test[i].id}">
+                    <input type="text" name="${ques[i].id}">
                 </label>
             </div>`
     );
@@ -40,9 +46,9 @@ $("#test").append(
 var res = { score: 0, ans: [] };
 $("#submit").on("click", (e) => {
   e.preventDefault();
-  for (let i = 0; i < test.length; i++) {
-    if (test[i].type === "mcq") {
-      options = document.querySelectorAll(`input[name="${test[i].id}"]`);
+  for (let i = 0; i < ques.length; i++) {
+    if (ques[i].type === "mcq") {
+      options = document.querySelectorAll(`input[name="${ques[i].id}"]`);
       let ans;
       for (const option of options) {
         if (option.checked) {
@@ -50,13 +56,13 @@ $("#submit").on("click", (e) => {
           break;
         }
       }
-      if (ans === test[i].a) {
+      if (ans === ques[i].a) {
         res.score++;
         res.ans.push("Correct");
       } else res.ans.push("Incorrect");
-    } else if (test[i].type === "sub") {
-      ans = $(`input[name="${test[i].id}"]`).val();
-      if (ans.toLowerCase() === test[i].a.toLowerCase()) {
+    } else if (ques[i].type === "sub") {
+      ans = $(`input[name="${ques[i].id}"]`).val();
+      if (ans.toLowerCase() === ques[i].a.toLowerCase()) {
         res.score++;
         res.ans.push("Correct");
       } else res.ans.push("Incorrect");

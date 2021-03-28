@@ -1,7 +1,7 @@
 const test = [
   {
-      subject: "math",
-      test: [
+    subject: "math",
+    test: [
       {
         id: 1,
         type: "mcq",
@@ -34,97 +34,129 @@ const test = [
   {
     subject: "ec",
     test: [
-    {
-      id: 1,
-      type: "mcq",
-      q: "Which of the following is not a processor?",
-      o: ["Intel Core i9-10980XE", "AMD Ryzen 9 5900X", "Nvidia GeForce RTX 2080 SUPER ", "Intel 8080"],
-      a: "Nvidia GeForce RTX 2080 SUPER",
-    },
-    {
-      id: 2,
-      type: "mcq",
-      q: "In a p-channel JFET, the charge carriers are",
-      o: ["Holes", "Electrons", "Both electrons and holes", "None of the above"],
-      a: "Holes",
-    },
-    {
-      id: 3,
-      type: "mcq",
-      q: "Which number system has a base 16?",
-      o: ["Octal", "Binary", "Hexadecimal", "Decimal"],
-      a: "Hexadecimal",
-    },
-    {
-      id: 4,
-      type: "sub",
-      q: " What is a DC-to-DC power converter which steps down voltage?",
-      a: "Buck converter"
-    }
+      {
+        id: 1,
+        type: "mcq",
+        q: "Which of the following is not a processor?",
+        o: ["Intel Core i9-10980XE", "AMD Ryzen 9 5900X", "Nvidia GeForce RTX 2080 SUPER ", "Intel 8080"],
+        a: "Nvidia GeForce RTX 2080 SUPER",
+      },
+      {
+        id: 2,
+        type: "mcq",
+        q: "In a p-channel JFET, the charge carriers are",
+        o: ["Holes", "Electrons", "Both electrons and holes", "None of the above"],
+        a: "Holes",
+      },
+      {
+        id: 3,
+        type: "mcq",
+        q: "Which number system has a base 16?",
+        o: ["Octal", "Binary", "Hexadecimal", "Decimal"],
+        a: "Hexadecimal",
+      },
+      {
+        id: 4,
+        type: "sub",
+        q: " What is a DC-to-DC power converter which steps down voltage?",
+        a: "Buck converter"
+      }
     ]
   },
   {
     subject: "cs",
     test: [
-    {
-      id: 1,
-      type: "mcq",
-      q: "Which of the following is not a programming language?",
-      o: ["C#", "HTML", "Scala", "Python"],
-      a: "HTML",
-    },
-    {
-      id: 2,
-      type: "mcq",
-      q: "What is binary form for 10?",
-      o: ["0111", "0100", "0010", "1010"],
-      a: "1010",
-    },
-    {
-      id: 3,
-      type: "mcq",
-      q: "Which number system has a base 8?",
-      o: ["Octal", "Binary", "Hexadecimal", "Decimal"],
-      a: "Octal",
-    },
-    {
-      id: 4,
-      type: "sub",
-      q: "Which statement is used to break out of a loop?",
-      a: "Break"
-    }
+      {
+        id: 1,
+        type: "mcq",
+        q: "Which of the following is not a programming language?",
+        o: ["C#", "HTML", "Scala", "Python"],
+        a: "HTML",
+      },
+      {
+        id: 2,
+        type: "mcq",
+        q: "What is binary form for 10?",
+        o: ["0111", "0100", "0010", "1010"],
+        a: "1010",
+      },
+      {
+        id: 3,
+        type: "mcq",
+        q: "Which number system has a base 8?",
+        o: ["Octal", "Binary", "Hexadecimal", "Decimal"],
+        a: "Octal",
+      },
+      {
+        id: 4,
+        type: "sub",
+        q: "Which statement is used to break out of a loop?",
+        a: "Break"
+      }
     ]
   },
   {
     subject: "eng",
     test: [
-    {
-      id: 1,
-      type: "mcq",
-      q: "Which of the following is a pronoun?",
-      o: ["Aneesh", "He", "Nandu", "Karan"],
-      a: "He",
-    },
-    {
-      id: 2,
-      type: "mcq",
-      q: "How many alphabets are there in english language?",
-      o: ["26", "10000", "0", "35"],
-      a: "26",
-    },
-    {
-      id: 3,
-      type: "mcq",
-      q: "How many vowels are there in english language?",
-      o: ["5", "33", "69", "1000"],
-      a: "5",
-    },
-    {
-      id: 4,
-      type: "sub",
-      q: "He is ___ good boy. Fill the blank with appropriate article.",
-      a: "a"
-    }
+      {
+        id: 1,
+        type: "mcq",
+        q: "Which of the following is a pronoun?",
+        o: ["Aneesh", "He", "Nandu", "Karan"],
+        a: "He",
+      },
+      {
+        id: 2,
+        type: "mcq",
+        q: "How many alphabets are there in english language?",
+        o: ["26", "10000", "0", "35"],
+        a: "26",
+      },
+      {
+        id: 3,
+        type: "mcq",
+        q: "How many vowels are there in english language?",
+        o: ["5", "33", "69", "1000"],
+        a: "5",
+      },
+      {
+        id: 4,
+        type: "sub",
+        q: "He is ___ good boy. Fill the blank with appropriate article.",
+        a: "a"
+      }
+    ]
+  },
+  {
+    subject: "sci",
+    test: [
+      {
+        id: 1,
+        type: "mcq",
+        q: "Which of the following is a halogen?",
+        o: ["Ne", "H", "F", "O"],
+        a: "Ne",
+      },
+      {
+        id: 2,
+        type: "mcq",
+        q: "What is rate of change of displacement called?",
+        o: ["Torque", "Momentum", "Acceleration", "Velocity"],
+        a: "Velocity",
+      },
+      {
+        id: 3,
+        type: "mcq",
+        q: "How many bones are there in human body?",
+        o: ["50", "150", "270", "206"],
+        a: "206",
+      },
+      {
+        id: 4,
+        type: "sub",
+        q: "Which body part is used by fishes for respiration?",
+        a: "Gills"
+      }
     ]
   }
 ];
