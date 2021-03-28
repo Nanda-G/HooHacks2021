@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  const { ipcRenderer } = require("electron");
+  const { dialog } = require("electron").remote;
   const fs = require("fs");
   //const io = require("socket.io-client");
   let video = document.querySelector("video");
@@ -50,6 +50,10 @@ $(document).ready(() => {
   }
 
   socket.on("model_response", (string) => {
-    console.log(string);
+    if (string === "Please adjust the camera angle") {
+      dialog.showErrorBox("WARNING", string);
+    } else if (string === "Please show your notebook for 5 seconds") {
+      dialog.showMessageBox({ message: string, type: "info", title: "ALERT" });
+    }
   });
 });

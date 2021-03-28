@@ -29,8 +29,8 @@ def face_detection(image, cond1=False):
         else:
             if cond1:
                 return "All good"
-            return "WARNING: Please adjust the camera angle"
+            return "Please adjust the camera angle"
     if var==False:
         if cond1:
             return "All good"
-        return "WARNING: Please adjust the camera angle"
+        return "Please adjust the camera angle"
