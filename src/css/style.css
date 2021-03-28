@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap');
 *{
-	background-color: #fff;
+	background-color #fff;
 	color: #000;
 	user-select: none;
 }
 
 #heading{
-	display: inline;
 	text-align: center;
+	font-family: "Noto Serif JP";
+	margin-top: 2vw;
+	font-size: 40px;
+}
+#heading h1 {
+	font-size: 40px;
 }
 .instructions h2{
 	text-align: center

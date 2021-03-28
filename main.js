@@ -30,11 +30,11 @@ const createWindow = () => {
   win.webContents.on("before-input-event", (event, input) => {
     if (input.control && input.key.toLowerCase() === "v") {
       event.preventDefault();
-      ipcMain.send("copy");
+      win.webContents.send("copy");
     }
     if (input.control && input.key.toLowerCase() === "c") {
       event.preventDefault();
-      ipcMain.send("copy");
+      win.webContents.send("copy");
     }
   });
 

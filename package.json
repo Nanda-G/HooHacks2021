@@ -4,7 +4,11 @@
   "description": "Repository for the HooHacks 2021 Hackathon.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager . Shojiki --all --ignore=node_modules --asar --out=dist --icon=icon",
+    "build:win": "electron-packager . Shojiki --platform=win32 --ignore=node_modules --asar --out=dist --icon=icon",
+    "build:linux": "electron-packager . Shojiki --platform=linux --ignore=node_modules --asar --out=dist --icon=icon",
+    "build:mac": "electron-packager . Shojiki --platform=darwin --ignore=node_modules --asar --out=dist --icon=icon"
   },
   "repository": {
     "type": "git",
