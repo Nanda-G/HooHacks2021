@@ -48,4 +48,8 @@ $(document).ready(() => {
       }
     );
   }
+
+  socket.on("model_response", (string) => {
+    console.log(string);
+  });
 });

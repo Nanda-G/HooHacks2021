@@ -6,6 +6,9 @@ import base64
 import cv2
 import numpy as np
 from flask_socketio import SocketIO
+from time import *
+from cv import *
+
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 socketio = SocketIO(app, cors_allowed_origins='*')
@@ -48,7 +51,11 @@ def socketio_test(photoData):
     img_data = base64.b64decode(photoData)
     nparr = np.fromstring(img_data, np.uint8)
     img_np = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-    print("Model run successful.")
+    cv2.imshow("dhd",img_np)
+    cv2.waitKey(1)
+    string1 = face_detection(img_np)
+    print(string1)
+    socketio.emit('model_response', string1)
 
 if __name__ == "__main__":
 	socketio.run(app, port=8000, debug=True)

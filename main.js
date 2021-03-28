@@ -38,7 +38,7 @@ const createWindow = () => {
     }
   });
 
-  Menu.setApplicationMenu(menu);
+  // Menu.setApplicationMenu(menu)
   win.toggleDevTools();
   win.on("ready-to-show", () => {
     win.show();
